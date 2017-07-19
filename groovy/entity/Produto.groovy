@@ -1,9 +1,9 @@
 package groovy.entity
 
 class Produto{
-    String nome
-    double precoUnit
-    ArrayList<Promocao> promocoes
+    private String nome
+    private double precoUnit
+    private List<Promocao> promocoes
 
     Produto(nome, precoUnit){
         promocoes = []

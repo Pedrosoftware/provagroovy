@@ -13,14 +13,6 @@ class Caixa {
         this.carrinho = carrinho
     }
 
-    void add(String prodNome){
-        carrinho.add(prodNome)
-    }
-
-    void remove(String prodNome){
-        carrinho.remove(prodNome)
-    }
-
     double getTotalDiscount(){
         this.calValues()
         return precoDesconto
@@ -51,7 +43,7 @@ class Caixa {
         double precoPromocao
         for(promocao in produto.promocoes){
             precoPromocao = promocao.aplicar(qtd)
-            if(menorPreco > precoPromocao || menorPreco == 0){
+            if(!menorPreco || menorPreco > precoPromocao){
                 menorPreco = precoPromocao
             }
         }

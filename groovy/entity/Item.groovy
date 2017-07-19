@@ -5,7 +5,7 @@ package groovy.entity
  */
 class Item {
 
-    Produto produto
+    private Produto produto
     private int qtd
 
     Item(Produto produto) {
@@ -21,6 +21,8 @@ class Item {
         qtd++
     }
     void decrementarQtd(){
-        qtd--
+        if(qtd>1){
+            qtd--
+        }
     }
 }

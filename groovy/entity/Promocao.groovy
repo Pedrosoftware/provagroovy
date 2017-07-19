@@ -2,14 +2,13 @@ package groovy.entity
 
 abstract class Promocao{
 
-    int idPromocao
-    int qtdParaCombo
-    double precoUnitario
-    double qtdCobrarNoCombo
-    double valorCombo
-    int totalCombos
-    int totalProdAlemCombo
-
+    private int idPromocao
+    private int qtdParaCombo
+    private double precoUnitario
+    private double qtdCobrarNoCombo
+    private double valorCombo
+    private int totalCombos
+    private int totalProdAlemCombo
 
     Promocao(int precoUnitario){
         this.precoUnitario = precoUnitario
@@ -29,7 +28,7 @@ abstract class Promocao{
         this.qtdParaCombo = qtdParaCombo
         this.valorCombo = valorCombo
     }
-    
+
     abstract double aplicar(int qtdProdutos)
 
     private definirTotalCombos(qtdProdutos){
@@ -47,4 +46,28 @@ abstract class Promocao{
         definirTotalCombos(qtdProdutos)
         definirTotalAlemCombo(qtdProdutos)
     }
+
+
+    protected double getPrecoUnitario() {
+        return precoUnitario
+    }
+
+    protected double getQtdCobrarNoCombo() {
+        return qtdCobrarNoCombo
+    }
+
+    protected double getValorCombo() {
+        return valorCombo
+    }
+
+    protected int getTotalCombos() {
+        return totalCombos
+    }
+
+    protected int getTotalProdAlemCombo() {
+        return totalProdAlemCombo
+    }
+
+
+
 }
